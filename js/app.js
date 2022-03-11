@@ -121,9 +121,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
-                      </a>
-                      ${post.comments?.text}
+                          ${post.comments[0].user}
+                      </a>                         
+                      ${post.comments[0].text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -157,7 +157,7 @@ const displayReportedPosts = () => {
     document.getElementById( "reported" ).innerHTML = "";   
     const reportedPosts = getReportedPosts();
 
-    reportedPosts.forEach((post) => {            //reported post not showing only reported post is fixed here 
+    reportedPosts.forEach((post) => {            //reported  post not showing only is fixed here 
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
