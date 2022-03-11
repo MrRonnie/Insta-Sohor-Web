@@ -144,7 +144,9 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  document.getElementById( "liked" ).innerHTML = ""; // liked post repeat evertime i click love icon is fixed here 
   const likedPosts = getLikedPosts();
+  
   likedPosts.forEach((post) => {
       const div = createPost(post);
       document.getElementById( "liked" ).appendChild(div);
@@ -153,6 +155,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
+
     posts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
