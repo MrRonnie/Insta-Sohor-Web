@@ -52,7 +52,7 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
     const image = post.image;
-    const userImage = post.userImage // 2nd user profile bug 
+    const userImage = post.userImage // 2nd user profile bug fixed here
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
@@ -144,7 +144,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
-  document.getElementById( "liked" ).innerHTML = ""; // liked post repeat evertime i click love icon is fixed here 
+  document.getElementById( "liked" ).innerHTML = ""; // liked post repeat evertime i clicked love icon is fixed here 
   const likedPosts = getLikedPosts();
   
   likedPosts.forEach((post) => {
@@ -154,9 +154,10 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+    document.getElementById( "reported" ).innerHTML = "";   
     const reportedPosts = getReportedPosts();
 
-    posts.forEach((post) => {
+    reportedPosts.forEach((post) => {            //reported post not showing only reported post is fixed here 
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
